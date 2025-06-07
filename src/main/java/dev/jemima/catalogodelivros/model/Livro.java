@@ -4,10 +4,8 @@ import java.util.List;
 
 public class Livro {
     private String titulo;
-    private String autor;
-    private Integer anoNascimento;
-    private Integer anoMorte;
-    private List<String> idiomas;
+    private Autor autor;
+    private String idioma;
     private Integer numeroDownloads;
 
     public String getTitulo() {
@@ -18,36 +16,20 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
-    public Integer getAnoNascimento() {
-        return anoNascimento;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setAnoNascimento(Integer anoNascimento) {
-        this.anoNascimento = anoNascimento;
-    }
-
-    public Integer getAnoMorte() {
-        return anoMorte;
-    }
-
-    public void setAnoMorte(Integer anoMorte) {
-        this.anoMorte = anoMorte;
-    }
-
-    public List<String> getIdiomas() {
-        return idiomas;
-    }
-
-    public void setIdiomas(List<String> idiomas) {
-        this.idiomas = idiomas;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
     public Integer getNumeroDownloads() {
@@ -63,8 +45,8 @@ public class Livro {
         return "\n------" +
                 "\nLIVRO" +
                 "\nTitulo: " + titulo +
-                "\nAutor: " + autor + " (" + anoNascimento + " - " + anoMorte + ")" +
-                "\nIdiomas: " + idiomas +
+                "\nAutor: " + (autor != null ? autor : "Autor desconhecido") +
+                "\nIdioma: " + idioma +
                 "\nDownloads: " + numeroDownloads +
                 "\n------";
     }
